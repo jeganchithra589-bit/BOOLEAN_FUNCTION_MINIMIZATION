@@ -38,17 +38,49 @@ Hardware – PCs, Cyclone II , USB flasher
 Developed by: **RegisterNumber:25017588**
 
 
+
+```
+module Boolean_algebra(
+    input A, B, C, D,
+    input w, x, y, z,
+    output F1, F2
+);
+
+    // F1 expression
+    assign F1 = (~A & ~B & ~C & ~D) |
+                (A & ~C & ~D) |
+                (~B & C & ~D) |
+                (~A & B & C & D) |
+                (B & ~C & D);
+
+    // F2 expression
+    assign F2 = (x & ~y & z) |
+                (~x & ~y & z) |
+                (~w & x & y) |
+                (w & x & ~y) |
+                (w & x & y);
+```
+
+
 **RTL realization**
+
+
 <img width="1340" height="360" alt="Screenshot 2025-12-19 134429" src="https://github.com/user-attachments/assets/a5f1bbdc-dfd1-4a3a-8396-e794a513264e" />
 
 
 
 **Output:**
+
+
+
 <img width="604" height="748" alt="Screenshot 2025-12-19 134411" src="https://github.com/user-attachments/assets/1ef1ede6-dfc7-4ecf-92ae-13941e8c5655" />
 
 
 
 **Timing Diagram**
+
+
+
 <img width="1340" height="360" alt="Screenshot 2025-12-19 134429" src="https://github.com/user-attachments/assets/a5f1bbdc-dfd1-4a3a-8396-e794a513264e" />
 
 
